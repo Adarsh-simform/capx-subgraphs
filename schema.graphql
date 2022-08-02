@@ -1,0 +1,191 @@
+type CancelDecreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  collateralToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type CancelIncreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  purchaseToken: Bytes! # address
+  purchaseTokenAmount: BigInt! # uint256
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type CancelSwapOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  path: [Bytes]! # address[]
+  amountIn: BigInt! # uint256
+  minOut: BigInt! # uint256
+  triggerRatio: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  shouldUnwrap: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type CreateDecreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  collateralToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type CreateIncreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  purchaseToken: Bytes! # address
+  purchaseTokenAmount: BigInt! # uint256
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type CreateSwapOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  path: [Bytes]! # address[]
+  amountIn: BigInt! # uint256
+  minOut: BigInt! # uint256
+  triggerRatio: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  shouldUnwrap: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type ExecuteDecreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  collateralToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+  executionPrice: BigInt! # uint256
+}
+
+type ExecuteIncreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  purchaseToken: Bytes! # address
+  purchaseTokenAmount: BigInt! # uint256
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  executionFee: BigInt! # uint256
+  executionPrice: BigInt! # uint256
+}
+
+type ExecuteSwapOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  path: [Bytes]! # address[]
+  amountIn: BigInt! # uint256
+  minOut: BigInt! # uint256
+  amountOut: BigInt! # uint256
+  triggerRatio: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  shouldUnwrap: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
+
+type Initialize @entity {
+  id: ID!
+  router: Bytes! # address
+  vault: Bytes! # address
+  weth: Bytes! # address
+  usdx: Bytes! # address
+  minExecutionFee: BigInt! # uint256
+  minPurchaseTokenAmountUsd: BigInt! # uint256
+}
+
+type UpdateDecreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  collateralToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  indexToken: Bytes! # address
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+}
+
+type UpdateGov @entity {
+  id: ID!
+  gov: Bytes! # address
+}
+
+type UpdateIncreaseOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  isLong: Boolean! # bool
+  sizeDelta: BigInt! # uint256
+  triggerPrice: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+}
+
+type UpdateMinExecutionFee @entity {
+  id: ID!
+  minExecutionFee: BigInt! # uint256
+}
+
+type UpdateMinPurchaseTokenAmountUsd @entity {
+  id: ID!
+  minPurchaseTokenAmountUsd: BigInt! # uint256
+}
+
+type UpdateSwapOrder @entity {
+  id: ID!
+  account: Bytes! # address
+  ordexIndex: BigInt! # uint256
+  path: [Bytes]! # address[]
+  amountIn: BigInt! # uint256
+  minOut: BigInt! # uint256
+  triggerRatio: BigInt! # uint256
+  triggerAboveThreshold: Boolean! # bool
+  shouldUnwrap: Boolean! # bool
+  executionFee: BigInt! # uint256
+}
